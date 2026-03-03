@@ -1,34 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan OOP Dart - Putra Dhafir</title>
-    <link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan OOP Dart - Putra Dhafir</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    line-height:1.7;
+}
+
+header{
+    background:#1e3c72;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:30px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+nav{
+    background:#2a5298;
+    padding:10px 0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    margin:0;
+    padding:0;
+}
+
+nav ul li{
+    margin:0 15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.section{
+    margin-bottom:60px;
+}
+
+.section h2{
+    color:#1e3c72;
+    border-bottom:3px solid #2a5298;
+    padding-bottom:5px;
+}
+
+pre{
+    background:#1e1e1e;
+    color:#00ff88;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+}
+
+iframe{
+    width:100%;
+    height:420px;
+    border:2px solid #2a5298;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+footer{
+    background:#1e3c72;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Object Oriented Programming (Dart)</h1>
-    <p>Nama: Putra Dhafir Nashrullah | NIM: 251410009</p>
+    <h1>LAPORAN OBJECT ORIENTED PROGRAMMING (DART)</h1>
+    <p>Putra Dhafir Nashrullah | NIM: 251410009</p>
 </header>
 
-<nav class="navbar">
+<nav>
     <ul>
-        <li><a href="#materi2">Class & Object</a></li>
+        <li><a href="#pengertian">Pengertian</a></li>
+        <li><a href="#materi2">Class</a></li>
         <li><a href="#materi3">Constructor</a></li>
         <li><a href="#materi4">Validasi</a></li>
         <li><a href="#materi5">Encapsulation</a></li>
-        <li><a href="#materi6">Named Param</a></li>
+        <li><a href="#materi6">Named Parameter</a></li>
+        <li><a href="#kesimpulan">Kesimpulan</a></li>
     </ul>
 </nav>
 
-<section class="content">
+<div class="container">
 
-    <!-- Materi 2 -->
-    <div class="section" id="materi2">
-        <h2>2. Class & Object</h2>
-        <pre><code>
+<!-- 1 -->
+<div class="section" id="pengertian">
+<h2>1. Pengertian Object Oriented Programming (OOP)</h2>
+<p>
+Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek. 
+Dalam OOP, program dibangun berdasarkan objek yang merupakan representasi dari entitas nyata maupun abstrak. 
+Setiap objek dibuat dari sebuah class yang berfungsi sebagai cetak biru (blueprint).
+</p>
+<p>
+Tujuan utama OOP adalah membuat program lebih terstruktur, mudah dikembangkan, serta meningkatkan keamanan dan 
+penggunaan ulang kode. Dalam bahasa Dart, konsep OOP sangat penting karena Dart dirancang sebagai bahasa 
+yang sepenuhnya mendukung pemrograman berbasis objek.
+</p>
+</div>
+
+<!-- 2 -->
+<div class="section" id="materi2">
+<h2>2. Class dan Object</h2>
+<p>
+Class adalah cetak biru atau template untuk membuat objek. Di dalam class terdapat atribut (data) dan method (fungsi) 
+yang mendefinisikan perilaku suatu objek. Object adalah hasil instansiasi dari class.
+</p>
+<p>
+Dengan menggunakan class dan object, program menjadi lebih terorganisir karena setiap data dan fungsi 
+dikelompokkan sesuai fungsinya.
+</p>
+
+<pre><code>
 class Car {
   String? model;
   String? color;
@@ -37,28 +151,46 @@ class Car {
     print('Car started!');
   }
 }
-        </code></pre>
-        <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
-    </div>
+</code></pre>
 
-    <!-- Materi 3 -->
-    <div class="section" id="materi3">
-        <h2>3. Constructor</h2>
-        <pre><code>
+<iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
+</div>
+
+<!-- 3 -->
+<div class="section" id="materi3">
+<h2>3. Constructor</h2>
+<p>
+Constructor adalah method khusus yang digunakan untuk menginisialisasi nilai awal suatu objek saat objek dibuat. 
+Constructor memiliki nama yang sama dengan class.
+</p>
+<p>
+Fungsi constructor adalah memberikan nilai awal pada atribut sehingga object siap digunakan.
+</p>
+
+<pre><code>
 class Car {
   String? model;
   String? color;
 
   Car(this.model, this.color);
 }
-        </code></pre>
-        <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
-    </div>
+</code></pre>
 
-    <!-- Materi 4 -->
-    <div class="section" id="materi4">
-        <h2>4. Validasi Data</h2>
-        <pre><code>
+<iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
+</div>
+
+<!-- 4 -->
+<div class="section" id="materi4">
+<h2>4. Validasi Data dalam Class</h2>
+<p>
+Validasi data adalah proses pengecekan terhadap data yang dimasukkan agar sesuai dengan aturan yang telah ditentukan. 
+Validasi biasanya dilakukan di dalam constructor atau method setter.
+</p>
+<p>
+Tujuan validasi adalah mencegah data tidak valid masuk ke dalam object dan menjaga konsistensi program.
+</p>
+
+<pre><code>
 class Mahasiswa {
   String nama;
   String nim;
@@ -66,28 +198,46 @@ class Mahasiswa {
 
   Mahasiswa(this.nama, this.nim, this.ipk);
 }
-        </code></pre>
-        <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
-    </div>
+</code></pre>
 
-    <!-- Materi 5 -->
-    <div class="section" id="materi5">
-        <h2>5. Encapsulation</h2>
-        <pre><code>
+<iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
+</div>
+
+<!-- 5 -->
+<div class="section" id="materi5">
+<h2>5. Encapsulation</h2>
+<p>
+Encapsulation adalah konsep OOP yang membatasi akses langsung ke atribut suatu class. 
+Data biasanya dibuat private agar tidak dapat diakses secara langsung dari luar class.
+</p>
+<p>
+Akses terhadap data dilakukan melalui method getter dan setter sehingga keamanan dan kontrol data lebih terjaga.
+</p>
+
+<pre><code>
 class Person {
   String _name;
   int age;
 
   Person(this._name, this.age);
 }
-        </code></pre>
-        <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
-    </div>
+</code></pre>
 
-    <!-- Materi 6 -->
-    <div class="section" id="materi6">
-        <h2>6. Named Parameter</h2>
-        <pre><code>
+<iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
+</div>
+
+<!-- 6 -->
+<div class="section" id="materi6">
+<h2>6. Constructor dengan Named Parameter</h2>
+<p>
+Named parameter memungkinkan pengisian parameter dengan menyebutkan nama variabelnya secara langsung saat pemanggilan constructor. 
+Hal ini membuat kode lebih mudah dibaca dan fleksibel.
+</p>
+<p>
+Dengan menggunakan kata kunci <strong>required</strong>, kita dapat memastikan parameter wajib diisi.
+</p>
+
+<pre><code>
 class Produk {
   final String id;
   final String nama;
@@ -95,22 +245,38 @@ class Produk {
 
   Produk({required this.id, required this.nama, required this.harga});
 }
-        </code></pre>
-        <iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
-    </div>
+</code></pre>
 
-</section>
+<iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
+</div>
+
+<!-- 7 -->
+<div class="section" id="kesimpulan">
+<h2>7. Kesimpulan</h2>
+<p>
+Object Oriented Programming (OOP) merupakan paradigma pemrograman yang membantu dalam membangun aplikasi 
+yang terstruktur, aman, dan mudah dikembangkan. 
+</p>
+<p>
+Konsep seperti Class, Object, Constructor, Validasi Data, Encapsulation, dan Named Parameter 
+membantu programmer dalam mengelola kompleksitas program serta meningkatkan kualitas kode. 
+Dalam Dart, penerapan OOP sangat penting karena bahasa ini berbasis objek dan banyak digunakan 
+dalam pengembangan aplikasi modern seperti Flutter.
+</p>
+</div>
+
+</div>
 
 <footer>
-    <p>© 2026 Putra Dhafir Nashrullah</p>
+© 2026 Putra Dhafir Nashrullah
 </footer>
 
 <script>
-document.querySelectorAll('.navbar a').forEach(link => {
-    link.addEventListener('click', function(e){
+document.querySelectorAll("nav a").forEach(anchor => {
+    anchor.addEventListener("click", function(e){
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior:"smooth"
         });
     });
 });
