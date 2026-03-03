@@ -133,9 +133,11 @@ footer{
 
 <div class="container">
 
-<!-- 2 -->
+<!-- 1 -->
 <div class="card">
-<h2>2. Class & Object</h2>
+<h2>2. Class & Object</h2> Pada source code ini, class Car memiliki dua atribut yaitu model dan color. Method start() 
+dan stop() menggambarkan perilaku objek mobil.
+Class ini menunjukkan konsep dasar OOP yaitu pembuatan objek dari sebuah blueprint (class).
 <pre><code>
 class Car {
   String? model;
@@ -153,9 +155,11 @@ class Car {
 <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
 </div>
 
-<!-- 3 -->
+<!-- 2 -->
 <div class="card">
-<h2>3. Constructor</h2>
+<h2>3. Constructor</h2> Constructor digunakan untuk memberikan nilai awal saat objek dibuat. Dengan Car(this.model,
+this.color), setiap objek Car akan langsung memiliki nilai model dan color ketika diinisialisasi
+Ini meningkatkan efisiensi dan memastikan data tidak kosong
 <pre><code>
 class Car {
   String? model;
@@ -171,9 +175,12 @@ class Car {
 <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
 </div>
 
-<!-- 4 -->
+<!-- 3 -->
 <div class="card">
-<h2>4. Validasi Data</h2>
+<h2>4. Validasi Data</h2> Validasi constructor merupakan proses pengecekan data yang diberikan saat pembuatan 
+object agar sesuai dengan aturan atau ketentuan tertentu. Tujuan validasi adalah untuk 
+mencegah terjadinya kesalahan data (invalid data) yang dapat menyebabkan bug atau 
+ketidakkonsistenan dalam program.
 <pre><code>
 class Mahasiswa {
   String nama;
@@ -190,9 +197,12 @@ class Mahasiswa {
 <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
 </div>
 
-<!-- 5 -->
+<!-- 4 -->
 <div class="card">
-<h2>5. Encapsulation</h2>
+<h2>5. Encapsulation</h2> Untuk mengakses atau mengubah nilai atribut private, digunakan method khusus seperti 
+getter dan setter. Getter berfungsi untuk mengambil nilai atribut, sedangkan setter 
+digunakan untuk mengubah nilai atribut dengan kontrol tertentu. Dengan encapsulation, 
+data menjadi lebih aman, terkontrol, dan terhindar dari manipulasi yang tidak diinginkan
 <pre><code>
 class Person {
   String _name;
@@ -212,9 +222,12 @@ class Person {
 <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
 </div>
 
-<!-- 6 -->
+<!-- 5 -->
 <div class="card">
-<h2>6. Named Parameter Constructor</h2>
+<h2>6. Named Parameter Constructor</h2> Penggunaan named parameter sangat berguna ketika sebuah function atau constructor 
+memiliki banyak parameter. Selain meningkatkan keterbacaan (readability), named 
+parameter juga mengurangi risiko kesalahan urutan pengisian nilai. Hal ini membuat 
+kode lebih fleksibel dan profesional dalam pengembangannya.
 <pre><code>
 class Produk {
   final String id;
@@ -237,7 +250,9 @@ class Produk {
 
 <!-- Tambahan -->
 <div class="card">
-<h2>Bonus Demo</h2>
+<h2>Bonus Demo</h2> Melalui implementasi ini, dapat dilihat bagaimana konsep OOP membantu dalam 
+memecah permasalahan menjadi bagian-bagian kecil yang terstruktur. Hal tersebut 
+membuat program lebih mudah dikembangkan, diuji, dan dipelihara dalam jangka panjang.
 <iframe src="https://dartpad.dev/embed-dart.html?id=b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
 </div>
 
