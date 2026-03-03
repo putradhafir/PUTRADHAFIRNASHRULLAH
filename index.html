@@ -1,143 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Laporan OOP - Putra Dhafir</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan OOP Dart - Putra Dhafir</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color:#333;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+nav{
+  padding:20px 40px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+}
+
+nav h1{
+  font-size:22px;
 }
 
 .container{
-    width:90%;
-    max-width:1000px;
-    margin:40px auto;
+  padding:40px 8%;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    margin-bottom:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    transition:0.3s ease;
+  background:rgba(255,255,255,0.1);
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:40px;
+  backdrop-filter: blur(10px);
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.3);
-}
-
-h2{
-    margin-top:0;
-    padding-bottom:10px;
-    border-bottom:3px solid #2a5298;
-    color:#1e3c72;
-}
-
-p{
-    line-height:1.6;
+.card h2{
+  margin-bottom:15px;
 }
 
 iframe{
-    width:100%;
-    height:500px;
-    border:none;
-    margin-top:15px;
-    border-radius:10px;
-}
-
-/* Header */
-.header{
-    text-align:center;
-    padding:40px 20px;
-    color:white;
-}
-
-.header h1{
-    margin:0;
-    font-size:36px;
-}
-
-.header p{
-    margin:5px 0 0 0;
-    font-size:18px;
-    opacity:0.9;
+  width:100%;
+  height:500px;
+  border:none;
+  border-radius:10px;
+  background:white;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<h1>Laporan Object-Oriented Programming</h1>
-<p>Nama: Putra Dhafir Nashrullah | NIM: 251410009 | Kelas: SI2A</p>
-</div>
+<nav>
+  <h1>Laporan OOP Dart - Putra Dhafir Nashrullah</h1>
+</nav>
 
 <div class="container">
 
 <div class="card">
-<h2>Pendahuluan</h2>
-<p>
-Laporan Object-Oriented Programming (OOP) adalah dokumen dokumentasi teknis 
-yang menjelaskan desain, struktur, dan implementasi perangkat lunak berbasis objek. 
-Laporan ini menjabarkan bagaimana entitas dunia nyata dimodelkan ke dalam kelas (class), 
-objek, serta menerapkan empat pilar utama yaitu enkapsulasi, pewarisan (inheritance), 
-polimorfisme, dan abstraksi untuk menciptakan kode yang modular, efisien, 
-dan mudah dipelihara.
-</p>
-<p>
-Melalui laporan ini, setiap konsep OOP dalam bahasa Dart akan dijelaskan 
-dan diimplementasikan secara sistematis untuk menunjukkan bagaimana paradigma 
-berorientasi objek membantu dalam pengembangan perangkat lunak yang terstruktur.
-</p>
-</div>
-
-<div class="card">
 <h2>1. Class & Object</h2>
-<p>
-Class adalah blueprint atau cetakan untuk membuat object. 
-Object merupakan hasil instansiasi dari class yang memiliki atribut dan method.
-</p>
 <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
 </div>
 
 <div class="card">
 <h2>2. Constructor</h2>
-<p>
-Constructor adalah method khusus dalam class yang otomatis dipanggil 
-saat object dibuat untuk menginisialisasi nilai atribut.
-</p>
 <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
 </div>
 
 <div class="card">
 <h2>3. Validasi Constructor</h2>
-<p>
-Validasi memastikan data yang diberikan saat pembuatan object memenuhi 
-aturan tertentu sehingga menjaga integritas data.
-</p>
 <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
 </div>
 
 <div class="card">
 <h2>4. Encapsulation</h2>
-<p>
-Encapsulation membatasi akses langsung ke atribut dengan menggunakan 
-private variable serta menyediakan getter dan setter.
-</p>
 <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
 </div>
 
 <div class="card">
 <h2>5. Named Parameter</h2>
-<p>
-Named parameter membuat parameter lebih fleksibel dan mudah dibaca 
-karena dipanggil berdasarkan nama.
-</p>
 <iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
 </div>
 
