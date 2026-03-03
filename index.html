@@ -3,142 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan OOP Dart - Putra Dhafir</title>
+<title>OOP Dart - Putra Dhafir</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#f4f6f9;
+    --card:#ffffff;
+    --text:#222;
+    --primary:#2563eb;
+}
+
+body.dark{
+    --bg:#0d1117;
+    --card:#161b22;
+    --text:#e6edf3;
 }
 
 body{
-    background: linear-gradient(135deg,#1e3c72,#2a5298);
-    color:#333;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.3s;
 }
 
 /* NAVBAR */
 nav{
-    background:white;
-    padding:15px 50px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    padding:15px 50px;
+    background:var(--card);
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-nav h2{
-    color:#1e3c72;
-}
-
 nav ul{
-    list-style:none;
     display:flex;
     gap:20px;
+    list-style:none;
 }
 
-nav ul li{
-    cursor:pointer;
+nav a{
+    text-decoration:none;
+    color:var(--text);
     font-weight:500;
+}
+
+.toggle{
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:5px;
+    background:var(--primary);
+    color:white;
 }
 
 /* HERO */
 .hero{
     text-align:center;
-    padding:80px 20px;
-    color:white;
+    padding:70px 20px;
 }
 
-.hero h1{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    font-size:18px;
-    opacity:0.9;
-}
-
-/* CONTAINER */
 .container{
     width:90%;
     max-width:1100px;
     margin:40px auto;
 }
 
-/* CARD */
 .card{
-    background:white;
+    background:var(--card);
     padding:25px;
     border-radius:15px;
-    margin-bottom:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:0.3s;
+    margin-bottom:40px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.card.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* CODE STYLE */
 pre{
-    background:#1e1e1e;
+    background:#111;
     color:#00ff88;
     padding:15px;
     border-radius:10px;
     overflow-x:auto;
+    position:relative;
 }
 
-/* IFRAME */
+.copy-btn{
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:5px 10px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:12px;
+}
+
 iframe{
     width:100%;
-    height:450px;
+    height:350px;
     border-radius:10px;
     margin-top:15px;
-    border:2px solid #1e3c72;
+    border:2px solid var(--primary);
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
+.run-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 15px;
+    background:var(--primary);
     color:white;
-    margin-top:40px;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <h2>OOP Dart</h2>
     <ul>
-        <li>Home</li>
-        <li>Materi</li>
-        <li>Demo</li>
-        <li>Kontak</li>
+        <li><a href="#materi2">Class</a></li>
+        <li><a href="#materi3">Constructor</a></li>
+        <li><a href="#materi4">Validasi</a></li>
+        <li><a href="#materi5">Encapsulation</a></li>
+        <li><a href="#materi6">Named</a></li>
     </ul>
+    <div class="toggle" onclick="toggleDark()">Dark Mode</div>
 </nav>
 
-<!-- 1 -->
 <div class="hero">
-    <h1>Laporan Object Oriented Programming (Dart)</h1>
-    <p>Nama: Putra Dhafir Nashrullah | NIM: 251410009</p>
+    <h1>Object Oriented Programming - Dart</h1>
+    <p>Putra Dhafir Nashrullah | 251410009</p>
 </div>
 
 <div class="container">
 
-<!-- 1 -->
-<div class="card">
-<h2>2. Class & Object</h2> Pada source code ini, class Car memiliki dua atribut yaitu model dan color. Method start() 
-dan stop() menggambarkan perilaku objek mobil.
-Class ini menunjukkan konsep dasar OOP yaitu pembuatan objek dari sebuah blueprint (class).
-<pre><code>
+<!-- CARD TEMPLATE -->
+
+<div class="card" id="materi2">
+<h2>2. Class & Object</h2>
+<pre><button class="copy-btn">Copy</button><code>
 class Car {
   String? model;
   String? color;
@@ -146,121 +170,100 @@ class Car {
   void start() {
     print('Car started!');
   }
-
-  void stop() {
-    print('Car stopped!');
-  }
 }
 </code></pre>
+<a class="run-btn" target="_blank" href="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40">Run in DartPad</a>
 <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
 </div>
 
-<!-- 2 -->
-<div class="card">
-<h2>3. Constructor</h2> Constructor digunakan untuk memberikan nilai awal saat objek dibuat. Dengan Car(this.model,
-this.color), setiap objek Car akan langsung memiliki nilai model dan color ketika diinisialisasi
-Ini meningkatkan efisiensi dan memastikan data tidak kosong
-<pre><code>
+<div class="card" id="materi3">
+<h2>3. Constructor</h2>
+<pre><button class="copy-btn">Copy</button><code>
 class Car {
   String? model;
   String? color;
 
   Car(this.model, this.color);
-
-  void start() {
-    print('Car started!');
-  }
 }
 </code></pre>
+<a class="run-btn" target="_blank" href="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c">Run in DartPad</a>
 <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
 </div>
 
-<!-- 3 -->
-<div class="card">
-<h2>4. Validasi Data</h2> Validasi constructor merupakan proses pengecekan data yang diberikan saat pembuatan 
-object agar sesuai dengan aturan atau ketentuan tertentu. Tujuan validasi adalah untuk 
-mencegah terjadinya kesalahan data (invalid data) yang dapat menyebabkan bug atau 
-ketidakkonsistenan dalam program.
-<pre><code>
+<div class="card" id="materi4">
+<h2>4. Validasi Data</h2>
+<pre><button class="copy-btn">Copy</button><code>
 class Mahasiswa {
   String nama;
   String nim;
   double ipk;
 
-  Mahasiswa(this.nama, this.nim, this.ipk) {
-    if (ipk < 0.0 || ipk > 4.0) {
-      throw ArgumentError('IPK harus 0.0 - 4.0');
-    }
-  }
+  Mahasiswa(this.nama, this.nim, this.ipk);
 }
 </code></pre>
+<a class="run-btn" target="_blank" href="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93">Run in DartPad</a>
 <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
 </div>
 
-<!-- 4 -->
-<div class="card">
-<h2>5. Encapsulation</h2> Untuk mengakses atau mengubah nilai atribut private, digunakan method khusus seperti 
-getter dan setter. Getter berfungsi untuk mengambil nilai atribut, sedangkan setter 
-digunakan untuk mengubah nilai atribut dengan kontrol tertentu. Dengan encapsulation, 
-data menjadi lebih aman, terkontrol, dan terhindar dari manipulasi yang tidak diinginkan
-<pre><code>
+<div class="card" id="materi5">
+<h2>5. Encapsulation</h2>
+<pre><button class="copy-btn">Copy</button><code>
 class Person {
   String _name;
   int age;
 
   Person(this._name, this.age);
-
-  void setName(String name) {
-    _name = name;
-  }
-
-  String getName() {
-    return _name;
-  }
 }
 </code></pre>
+<a class="run-btn" target="_blank" href="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e">Run in DartPad</a>
 <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
 </div>
 
-<!-- 5 -->
-<div class="card">
-<h2>6. Named Parameter Constructor</h2> Penggunaan named parameter sangat berguna ketika sebuah function atau constructor 
-memiliki banyak parameter. Selain meningkatkan keterbacaan (readability), named 
-parameter juga mengurangi risiko kesalahan urutan pengisian nilai. Hal ini membuat 
-kode lebih fleksibel dan profesional dalam pengembangannya.
-<pre><code>
+<div class="card" id="materi6">
+<h2>6. Named Parameter</h2>
+<pre><button class="copy-btn">Copy</button><code>
 class Produk {
   final String id;
   final String nama;
   final double harga;
-  final int stok;
-  final String kategori;
 
-  Produk({
-    required this.id,
-    required this.nama,
-    required this.harga,
-    this.stok = 0,
-    this.kategori = 'Umum',
-  });
+  Produk({required this.id, required this.nama, required this.harga});
 }
 </code></pre>
+<a class="run-btn" target="_blank" href="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07">Run in DartPad</a>
 <iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
 </div>
 
-<!-- Tambahan -->
-<div class="card">
-<h2>Bonus Demo</h2> Melalui implementasi ini, dapat dilihat bagaimana konsep OOP membantu dalam 
-memecah permasalahan menjadi bagian-bagian kecil yang terstruktur. Hal tersebut 
-membuat program lebih mudah dikembangkan, diuji, dan dipelihara dalam jangka panjang.
-<iframe src="https://dartpad.dev/embed-dart.html?id=b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
 </div>
 
-</div>
+<script>
+/* DARK MODE */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
 
-<footer>
-© 2026 Putra Dhafir Nashrullah | OOP Dart Project
-</footer>
+/* COPY BUTTON */
+document.querySelectorAll(".copy-btn").forEach(btn=>{
+    btn.addEventListener("click",function(){
+        let code=this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code);
+        this.innerText="Copied!";
+        setTimeout(()=>this.innerText="Copy",1500);
+    });
+});
+
+/* SCROLL ANIMATION */
+const cards=document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+    let trigger=window.innerHeight*0.85;
+    cards.forEach(card=>{
+        let top=card.getBoundingClientRect().top;
+        if(top<trigger){
+            card.classList.add("show");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
