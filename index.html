@@ -2,102 +2,235 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan OOP Dart - Putra Dhafir</title>
+<title>Laporan OOP Dart - Putra Dhafir Nashrullah</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* BACKGROUND FUTURISTIK */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-body{
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:white;
+/* CYBER LINE ANIMATION */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        120deg,
+        rgba(0,255,255,0.05) 0px,
+        rgba(0,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 40px
+    );
+    animation: moveLines 20s linear infinite;
+    z-index: -1;
 }
 
-nav{
-  padding:20px 40px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  position:sticky;
-  top:0;
+@keyframes moveLines {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-200px, -200px); }
 }
 
-nav h1{
-  font-size:22px;
+/* HEADER */
+h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #00e5ff;
+    text-shadow: 0 0 15px #00e5ff, 0 0 30px #00e5ff;
+    animation: glow 2s infinite alternate;
 }
 
-.container{
-  padding:40px 8%;
+h3 {
+    text-align: center;
+    color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff;
+    margin: 5px 0;
 }
 
-.card{
-  background:rgba(255,255,255,0.1);
-  padding:25px;
-  border-radius:15px;
-  margin-bottom:40px;
-  backdrop-filter: blur(10px);
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+    }
+    to {
+        text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
+    }
 }
 
-.card h2{
-  margin-bottom:15px;
+h2 {
+    color: #00bcd4;
 }
 
-iframe{
-  width:100%;
-  height:500px;
-  border:none;
-  border-radius:10px;
-  background:white;
+/* SECTION BOX */
+.section {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* CODE STYLE */
+pre {
+    background-color: #000000;
+    color: #00ff88;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* IFRAME STYLE */
+iframe {
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #00e5ff;
+    box-shadow: 0 0 15px #00e5ff;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<nav>
-  <h1>Laporan OOP Dart - Putra Dhafir Nashrullah</h1>
-</nav>
-
-<div class="container">
-
-<div class="card">
-<h2>1. Class & Object</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
+<div class="header-box">
+<h1>Putra Dhafir Nashrullah</h1>
+<h3>NIM : 251410009</h3>
+<h3>Kelas : SI2A</h3>
+<h2 style="text-align:center;">LAPORAN OBJECT ORIENTED PROGRAMMING (OOP) - DART</h2>
 </div>
 
-<div class="card">
-<h2>2. Constructor</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
+<div class="section">
+<h2>1. Pengertian OOP</h2>
+<p>
+Object Oriented Programming (OOP) adalah paradigma pemrograman berbasis objek.
+Objek dibuat dari class yang memiliki atribut dan method.
+</p>
 </div>
 
-<div class="card">
-<h2>3. Validasi Constructor</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
+<div class="section">
+<h2>2. Class dan Object</h2>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+</code></pre>
+
+<iframe src="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40?run=true"
+width="100%" height="500"></iframe>
 </div>
 
-<div class="card">
-<h2>4. Encapsulation</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
+<div class="section">
+<h2>3. Constructor</h2>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
+
+  Car(this.model, this.color);
+
+  void start() {
+    print('Car started!');
+  }
+}
+</code></pre>
+
+<iframe src="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c?run=true"
+width="100%" height="500"></iframe>
 </div>
 
-<div class="card">
-<h2>5. Named Parameter</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
+<div class="section">
+<h2>4. Validasi Data</h2>
+<pre><code>
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
+
+  Mahasiswa(this.nama, this.nim, this.ipk) {
+    if (ipk < 0.0 || ipk > 3,67) {
+      throw ArgumentError('IPK harus 0.0 - 4.0');
+    }
+  }
+}
+</code></pre>
+
+<iframe src="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93?run=true"
+width="100%" height="500"></iframe>
 </div>
 
-<div class="card">
-<h2>6. Program Tambahan 1</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
+<div class="section">
+<h2>5. Encapsulation</h2>
+<pre><code>
+class Person {
+  String _name;
+  int age;
+
+  Person(this._name, this.age);
+
+  void setName(String name) {
+    _name = name;
+  }
+
+  String getName() {
+    return _name;
+  }
+}
+</code></pre>
+
+<iframe src="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e?run=true"
+width="100%" height="500"></iframe>
 </div>
 
-<div class="card">
-<h2>7. Program Tambahan 2</h2>
-<iframe src="https://dartpad.dev/embed-dart.html?id=9994d491f57e635dfcd631521283771f"></iframe>
+<div class="section">
+<h2>6. Named Parameter Constructor</h2>
+<pre><code>
+class Produk {
+  final String id;
+  final String nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
+  });
+}
+</code></pre>
+
+<iframe src="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07?run=true"
+width="100%" height="500"></iframe>
 </div>
+
+<div class="section">
+<h2>7. Tambahan Program</h2>
+
+<iframe src="https://dartpad.dev/b46d62a6f572c3e8b0da7fbe46d7c12d?run=true"
+width="100%" height="500"></iframe>
+
+<br><br>
+
+<iframe src="https://dartpad.dev/9994d491f57e635dfcd631521283771f?run=true"
+width="100%" height="500"></iframe>
 
 </div>
 
