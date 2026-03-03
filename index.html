@@ -1,57 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Laporan Materi OOP Dart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan OOP Dart - Putra Dhafir</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f6f9;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
 
-        h1, h2 {
-            color: #2c3e50;
-        }
+body{
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    color:#333;
+}
 
-        pre {
-            background-color: #1e1e1e;
-            color: #00ff88;
-            padding: 15px;
-            overflow-x: auto;
-            border-radius: 8px;
-        }
+/* NAVBAR */
+nav{
+    background:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-        .section {
-            margin-bottom: 40px;
-        }
+nav h2{
+    color:#1e3c72;
+}
 
-        .box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
 
-        iframe {
-            width: 100%;
-            height: 500px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border: 2px solid #2c3e50;
-        }
-    </style>
+nav ul li{
+    cursor:pointer;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* CODE STYLE */
+pre{
+    background:#1e1e1e;
+    color:#00ff88;
+    padding:15px;
+    border-radius:10px;
+    overflow-x:auto;
+}
+
+/* IFRAME */
+iframe{
+    width:100%;
+    height:450px;
+    border-radius:10px;
+    margin-top:15px;
+    border:2px solid #1e3c72;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    color:white;
+    margin-top:40px;
+}
+</style>
 </head>
 
 <body>
 
-<h1>LAPORAN MATERI OBJECT ORIENTED PROGRAMMING (OOP) - DART</h1>
-<h3>Nama : Putra Dhafir Nashrullah | NIM : 251410009</h3>
+<!-- NAVBAR -->
+<nav>
+    <h2>OOP Dart</h2>
+    <ul>
+        <li>Home</li>
+        <li>Materi</li>
+        <li>Demo</li>
+        <li>Kontak</li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Laporan Object Oriented Programming (Dart)</h1>
+    <p>Nama: Putra Dhafir Nashrullah | NIM: 251410009</p>
+</div>
+
+<div class="container">
 
 <!-- 2 -->
-<div class="section box">
-<h2>2. Contoh Class dan Object (Tanpa Constructor)</h2>
+<div class="card">
+<h2>2. Class & Object</h2>
 <pre><code>
 class Car {
   String? model;
@@ -66,13 +150,11 @@ class Car {
   }
 }
 </code></pre>
-
-<h3>Live Demo DartPad:</h3>
 <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
 </div>
 
 <!-- 3 -->
-<div class="section box">
+<div class="card">
 <h2>3. Constructor</h2>
 <pre><code>
 class Car {
@@ -86,14 +168,12 @@ class Car {
   }
 }
 </code></pre>
-
-<h3>Live Demo DartPad:</h3>
 <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
 </div>
 
 <!-- 4 -->
-<div class="section box">
-<h2>4. Validasi Data (Class Mahasiswa)</h2>
+<div class="card">
+<h2>4. Validasi Data</h2>
 <pre><code>
 class Mahasiswa {
   String nama;
@@ -102,18 +182,16 @@ class Mahasiswa {
 
   Mahasiswa(this.nama, this.nim, this.ipk) {
     if (ipk < 0.0 || ipk > 4.0) {
-      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
+      throw ArgumentError('IPK harus 0.0 - 4.0');
     }
   }
 }
 </code></pre>
-
-<h3>Live Demo DartPad:</h3>
 <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
 </div>
 
 <!-- 5 -->
-<div class="section box">
+<div class="card">
 <h2>5. Encapsulation</h2>
 <pre><code>
 class Person {
@@ -131,14 +209,12 @@ class Person {
   }
 }
 </code></pre>
-
-<h3>Live Demo DartPad:</h3>
 <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
 </div>
 
 <!-- 6 -->
-<div class="section box">
-<h2>6. Constructor dengan Named Parameter</h2>
+<div class="card">
+<h2>6. Named Parameter Constructor</h2>
 <pre><code>
 class Produk {
   final String id;
@@ -156,18 +232,20 @@ class Produk {
   });
 }
 </code></pre>
-
-<h3>Live Demo DartPad:</h3>
 <iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
 </div>
 
-<!-- Tambahan Link ke-6 -->
-<div class="section box">
-<h2>Tambahan Demo DartPad</h2>
-
-<h3>Live Demo DartPad:</h3>
+<!-- Tambahan -->
+<div class="card">
+<h2>Bonus Demo</h2>
 <iframe src="https://dartpad.dev/embed-dart.html?id=b46d62a6f572c3e8b0da7fbe46d7c12d"></iframe>
 </div>
+
+</div>
+
+<footer>
+© 2026 Putra Dhafir Nashrullah | OOP Dart Project
+</footer>
 
 </body>
 </html>
