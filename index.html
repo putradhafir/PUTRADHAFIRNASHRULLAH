@@ -1,186 +1,34 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP Dart - Putra Dhafir</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#f4f6f9;
-    --card:#ffffff;
-    --text:#222;
-    --primary:#2563eb;
-}
-
-body.dark{
-    --bg:#0d1117;
-    --card:#161b22;
-    --text:#e6edf3;
-}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-    transition:0.3s;
-}
-
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 50px;
-    background:var(--card);
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-nav ul{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
-
-nav a{
-    text-decoration:none;
-    color:var(--text);
-    font-weight:500;
-}
-
-.toggle{
-    cursor:pointer;
-    padding:5px 10px;
-    border-radius:5px;
-    background:var(--primary);
-    color:white;
-}
-
-/* HERO */
-.hero{
-    text-align:center;
-    padding:70px 20px;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:40px auto;
-}
-
-.card{
-    background:var(--card);
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:40px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s;
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-pre{
-    background:#111;
-    color:#00ff88;
-    padding:15px;
-    border-radius:10px;
-    overflow-x:auto;
-    position:relative;
-}
-
-.copy-btn{
-    position:absolute;
-    top:8px;
-    right:8px;
-    background:var(--primary);
-    color:white;
-    border:none;
-    padding:5px 10px;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:12px;
-}
-
-iframe{
-    width:100%;
-    height:350px;
-    border-radius:10px;
-    margin-top:15px;
-    border:2px solid var(--primary);
-}
-
-.run-btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:8px 15px;
-    background:var(--primary);
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-size:14px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan OOP Dart - Putra Dhafir</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
 
-<nav>
-    <h2>PUTRA HTML</h2>
+<header>
+    <h1>Object Oriented Programming (Dart)</h1>
+    <p>Nama: Putra Dhafir Nashrullah | NIM: 251410009</p>
+</header>
+
+<nav class="navbar">
     <ul>
-        <li><a href="#materi2">Class</a></li>
+        <li><a href="#materi2">Class & Object</a></li>
         <li><a href="#materi3">Constructor</a></li>
         <li><a href="#materi4">Validasi</a></li>
         <li><a href="#materi5">Encapsulation</a></li>
-        <li><a href="#materi6">Named</a></li>
+        <li><a href="#materi6">Named Param</a></li>
     </ul>
-    <div class="toggle" onclick="toggleDark()">Dark Mode</div>
 </nav>
 
-<div class="hero">
-    <h1>Object Oriented Programming 
+<section class="content">
 
-
-Laporan Object-Oriented Programming (OOP) adalah dokumen dokumentasi teknis 
-yang menjelaskan desain, struktur, dan implementasi perangkat lunak berbasis objek. 
-Laporan ini menjabarkan bagaimana entitas dunia nyata dimodelkan ke dalam kelas (class), 
-objek, serta menerapkan empat pilar utama yaitu enkapsulasi, pewarisan (inheritance), 
-polimorfisme, dan abstraksi untuk menciptakan kode yang modular, efisien, 
-dan mudah dipelihara.</h1
-                         
-    <p>Putra Dhafir Nashrullah | 251410009</p>
-</div>
-
-<div class="container">
-
-<!-- CARD TEMPLATE -->
-
-<div class="card" id="materi2">
-<h2>1. Class & Object 
-Class merupakan blueprint atau cetakan yang digunakan untuk membuat sebuah object. 
-Di dalam class terdapat atribut (data/variabel) dan method (fungsi) yang mendefinisikan 
-perilaku suatu objek. Class berfungsi sebagai representasi konsep atau entitas dunia nyata 
-ke dalam bentuk program. Misalnya, class Mahasiswa dapat memiliki atribut seperti nama, 
-NIM, dan jurusan, serta method seperti tampilkanData().
-Object adalah hasil instansiasi dari class. Object memiliki nilai nyata dari atribut yang 
-telah didefinisikan dalam class dan dapat menjalankan method yang tersedia. Dengan 
-menggunakan konsep class dan object, program menjadi lebih terstruktur, modular, dan 
-mudah dikembangkan karena setiap entitas dipisahkan berdasarkan tanggung jawabnya.</h2>
-<pre><button class="copy-btn">Copy</button><code>
+    <!-- Materi 2 -->
+    <div class="section" id="materi2">
+        <h2>2. Class & Object</h2>
+        <pre><code>
 class Car {
   String? model;
   String? color;
@@ -189,41 +37,28 @@ class Car {
     print('Car started!');
   }
 }
-</code></pre>
-<a class="run-btn" target="_blank" href="https://dartpad.dev/8f3627510d64b42cab35e6cd91949b40">Run in DartPad</a>
-<iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
-</div>
+        </code></pre>
+        <iframe src="https://dartpad.dev/embed-dart.html?id=8f3627510d64b42cab35e6cd91949b40"></iframe>
+    </div>
 
-<div class="card" id="materi3">
-<h2> 2. Constructor 
-    
-Constructor adalah method khusus dalam sebuah class yang secara otomatis dipanggil 
-ketika object dibuat. Fungsi utama constructor adalah untuk menginisialisasi nilai awal 
-dari atribut yang dimiliki oleh class tersebut. Constructor memiliki nama yang sama 
-dengan nama class dan tidak memiliki tipe data pengembalian (return type).
-</h2>
-<pre><button class="copy-btn">Copy</button><code>
+    <!-- Materi 3 -->
+    <div class="section" id="materi3">
+        <h2>3. Constructor</h2>
+        <pre><code>
 class Car {
   String? model;
   String? color;
 
   Car(this.model, this.color);
 }
-</code></pre>
-<a class="run-btn" target="_blank" href="https://dartpad.dev/ab55d3390bcc10e7da6e19bb7dd6b37c">Run in DartPad</a>
-<iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
-</div>
+        </code></pre>
+        <iframe src="https://dartpad.dev/embed-dart.html?id=ab55d3390bcc10e7da6e19bb7dd6b37c"></iframe>
+    </div>
 
-<div class="card" id="materi4">
-<h3>3. Validasi Data 
-
-
-Validasi constructor merupakan proses pengecekan data yang diberikan saat pembuatan 
-object agar sesuai dengan aturan atau ketentuan tertentu. Tujuan validasi adalah untuk 
-mencegah terjadinya kesalahan data (invalid data) yang dapat menyebabkan bug atau 
-ketidakkonsistenan dalam program.
-</h2>
-<pre><button class="copy-btn">Copy</button><code>
+    <!-- Materi 4 -->
+    <div class="section" id="materi4">
+        <h2>4. Validasi Data</h2>
+        <pre><code>
 class Mahasiswa {
   String nama;
   String nim;
@@ -231,38 +66,28 @@ class Mahasiswa {
 
   Mahasiswa(this.nama, this.nim, this.ipk);
 }
-</code></pre>
-<a class="run-btn" target="_blank" href="https://dartpad.dev/3947e3d1fdf39788ba11363312a67a93">Run in DartPad</a>
-<iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
-</div>
+        </code></pre>
+        <iframe src="https://dartpad.dev/embed-dart.html?id=3947e3d1fdf39788ba11363312a67a93"></iframe>
+    </div>
 
-<div class="card" id="materi5">
-<h4>4. Encapsulation 
-Encapsulation membatasi akses langsung ke atribut dengan menggunakan 
-private variable serta menyediakan getter dan setter.
-</h2>
-<pre><button class="copy-btn">Copy</button><code>
+    <!-- Materi 5 -->
+    <div class="section" id="materi5">
+        <h2>5. Encapsulation</h2>
+        <pre><code>
 class Person {
   String _name;
   int age;
 
   Person(this._name, this.age);
 }
-</code></pre>
-<a class="run-btn" target="_blank" href="https://dartpad.dev/7bc3487bd4fceb57464bf1f25d092a8e">Run in DartPad</a>
-<iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
-</div>
+        </code></pre>
+        <iframe src="https://dartpad.dev/embed-dart.html?id=7bc3487bd4fceb57464bf1f25d092a8e"></iframe>
+    </div>
 
-<div class="card" id="materi6">
-<h2>5. Named Parameter 
-
-Named parameter adalah fitur dalam bahasa Dart yang memungkinkan parameter 
-dipanggil berdasarkan nama, bukan hanya berdasarkan urutan posisi. Dengan cara ini, 
-kode menjadi lebih jelas dan mudah dipahami karena setiap nilai yang diberikan langsung 
-menunjukkan maksud penggunaannya.
-
-</h2> 
-<pre><button class="copy-btn">Copy</button><code>
+    <!-- Materi 6 -->
+    <div class="section" id="materi6">
+        <h2>6. Named Parameter</h2>
+        <pre><code>
 class Produk {
   final String id;
   final String nama;
@@ -270,38 +95,23 @@ class Produk {
 
   Produk({required this.id, required this.nama, required this.harga});
 }
-</code></pre>
-<a class="run-btn" target="_blank" href="https://dartpad.dev/c59169f43ea6300d62fa22c8a79cee07">Run in DartPad</a>
-<iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
-</div>
+        </code></pre>
+        <iframe src="https://dartpad.dev/embed-dart.html?id=c59169f43ea6300d62fa22c8a79cee07"></iframe>
+    </div>
 
-</div>
+</section>
+
+<footer>
+    <p>© 2026 Putra Dhafir Nashrullah</p>
+</footer>
 
 <script>
-/* DARK MODE */
-function toggleDark(){
-    document.body.classList.toggle("dark");
-}
-
-/* COPY BUTTON */
-document.querySelectorAll(".copy-btn").forEach(btn=>{
-    btn.addEventListener("click",function(){
-        let code=this.nextElementSibling.innerText;
-        navigator.clipboard.writeText(code);
-        this.innerText="Copied!";
-        setTimeout(()=>this.innerText="Copy",1500);
-    });
-});
-
-/* SCROLL ANIMATION */
-const cards=document.querySelectorAll(".card");
-window.addEventListener("scroll",()=>{
-    let trigger=window.innerHeight*0.85;
-    cards.forEach(card=>{
-        let top=card.getBoundingClientRect().top;
-        if(top<trigger){
-            card.classList.add("show");
-        }
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 </script>
