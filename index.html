@@ -3,62 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan OOP Dart - Putra Dhafir</title>
-
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#f4f6f9;
-    line-height:1.7;
-}
-
-header{
-    background:#1e3c72;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:30px;
-}
-
-header p{
-    margin-top:10px;
-}
-
-nav{
-    background:#2a5298;
-    padding:10px 0;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    margin:0;
-    padding:0;
-}
-
-nav ul li{
-    margin:0 15px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.container{
-    width…
-Ba~: <!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laporan OOP Dart - Pixel Style</title>
 
 <!-- Pixel Font -->
@@ -132,6 +76,36 @@ iframe {
   border: 4px solid #ffff00;
   width: 100%;
   height: 500px;
+}
+
+/* --- STYLE BARU UNTUK TOMBOL --- */
+.run-btn-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.run-btn {
+  background-color: #ff0080; /* Pink */
+  color: white;
+  border: 4px solid #00ffcc; /* Cyan */
+  padding: 15px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px #000000;
+  display: inline-block;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.run-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.run-btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px #000000;
 }
 
 footer {
@@ -257,6 +231,9 @@ class Car {
 </code></pre>
 
 <iframe src="https://dartpad.dev/de50f1df1df31c2d8d40d9b9bbf9392d"></iframe>
+<div class="run-btn-container">
+  <a href="#" class="run-btn" target="_blank" id="btn-1">JALANKAN KODE</a>
+</div>
 </div>
 
 <div class="card">
@@ -281,6 +258,9 @@ class Car {
 </code></pre>
 
 <iframe src="https://dartpad.dev/de50f1df1df31c2d8d40d9b9bbf9392d"></iframe>
+<div class="run-btn-container">
+  <a href="#" class="run-btn" target="_blank" id="btn-2">JALANKAN KODE</a>
+</div>
 </div>
 
 <div class="card">
@@ -311,6 +291,9 @@ class Mahasiswa {
 </code></pre>
 
 <iframe src="https://dartpad.dev/1e5fd7dbdc40af36f08bc45e7644bbf2"></iframe>
+<div class="run-btn-container">
+  <a href="#" class="run-btn" target="_blank" id="btn-3">JALANKAN KODE</a>
+</div>
 </div>
 
 <div class="card">
@@ -339,6 +322,9 @@ class Person {
 </code></pre>
 
 <iframe src="https://dartpad.dev/5c76a0ea275cc9c91951b69b6b961b2c"></iframe>
+<div class="run-btn-container">
+  <a href="#" class="run-btn" target="_blank" id="btn-4">JALANKAN KODE</a>
+</div>
 </div>
 
 <div class="card">
@@ -368,6 +354,9 @@ class Produk {
 </code></pre>
 
 <iframe src="https://dartpad.dev/ee52930ee598efc6feab60987df50b0a"></iframe>
+<div class="run-btn-container">
+  <a href="#" class="run-btn" target="_blank" id="btn-5">JALANKAN KODE</a>
+</div>
 </div>
 
 <div class="card">
@@ -380,6 +369,20 @@ class Produk {
 <footer>
 © 2026 - PUTRA DHAFIR NASHRULLAH
 </footer>
+
+<script>
+  // Script ini otomatis menghubungkan tombol dengan iframe di atasnya
+  document.addEventListener("DOMContentLoaded", function() {
+    const iframes = document.querySelectorAll('iframe');
+    const buttons = document.querySelectorAll('.run-btn');
+
+    iframes.forEach((iframe, index) => {
+      if (buttons[index]) {
+        buttons[index].href = iframe.src;
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
