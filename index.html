@@ -278,7 +278,7 @@ class Car {
   <button class="run-btn" onclick="toggleDartpad('dartpad-1')">JALANKAN KODE</button>
 </div>
 
-<iframe id="dartpad-1" class="dartpad-iframe" src="https://dartpad.dev/6bad0f83ab1941d54b6cda465bd66e1e"></iframe>
+<iframe id="dartpad-1" class="dartpad-iframe" src="https://dartpad.dev/de50f1df1df31c2d8d40d9b9bbf9392d"></iframe>
 </div>
 
 <div class="card">
@@ -372,7 +372,7 @@ class Person {
   <button class="run-btn" onclick="toggleDartpad('dartpad-4')">JALANKAN KODE</button>
 </div>
 
-<iframe id="dartpad-4" class="dartpad-iframe" src="https://dartpad.dev/1e5fd7dbdc40af36f08bc45e7644bbf2"></iframe>
+<iframe id="dartpad-4" class="dartpad-iframe" src="https://dartpad.dev/5c76a0ea275cc9c91951b69b6b961b2c"></iframe>
 </div>
 
 <div class="card">
@@ -432,4 +432,30 @@ class Produk {
   <p>Contoh kode tambahan untuk dipelajari lebih lanjut.</p>
   
   <div class="run-btn-container">
-    <button class="run-btn" onclick="toggleDartpad('dartpad-
+    <button class="run-btn" onclick="toggleDartpad('dartpad-6')">JALANKAN KODE</button>
+  </div>
+
+  <iframe id="dartpad-6" class="dartpad-iframe" src="https://dartpad.dev/1945f9c6765fc148931e4419a7d8ec4b"></iframe>
+</div>
+
+</div>
+
+<footer>
+© 2026 - PUTRA DHAFIR NASHRULLAH
+</footer>
+
+<script>
+// Fungsi untuk toggle Dartpad
+function toggleDartpad(iframeId) {
+  var iframe = document.getElementById(iframeId);
+  if (iframe.classList.contains('show')) {
+    iframe.classList.remove('show');
+  } else {
+    iframe.classList.add('show');
+  }
+}
+
+// Fungsi untuk forum komentar
+function addComment(event) {
+  event.preventDefault();
+  var name = document.getElementById("name").value;
