@@ -204,42 +204,46 @@ footer {
 <h2>1. PENGERTIAN OOP</h2>
 
 <p>
-Object Oriented Programming (OOP) tidak hanya sekadar teknik pemrograman, 
-tetapi merupakan pendekatan desain sistem yang meniru cara manusia memahami dunia nyata. 
-Dalam kehidupan sehari-hari, kita mengenali entitas sebagai objek yang memiliki 
-karakteristik dan perilaku. OOP mengadopsi konsep ini ke dalam pengembangan 
-perangkat lunak sehingga struktur program menjadi lebih intuitif dan mudah dipahami.
+<strong>Object Oriented Programming (OOP)</strong> atau Pemrograman Berorientasi Objek adalah paradigma pemrograman yang menggunakan konsep "objek" untuk merepresentasikan data dan perilaku dalam program. 
 </p>
 
 <p>
-OOP bertujuan untuk meningkatkan modularitas sistem, yaitu dengan memecah 
-program besar menjadi bagian-bagian kecil yang terorganisir dalam bentuk class. 
-Setiap class bertanggung jawab atas satu konsep atau entitas tertentu, 
-sehingga pengembangan dan pemeliharaan sistem menjadi lebih terstruktur.
+Dalam OOP, segala sesuatu diibaratkan sebagai <strong>objek</strong> yang memiliki dua karakteristik utama:
+</p>
+
+<ul>
+  <li><strong>Atribut (Data/Property)</strong>: Informasi yang dimiliki oleh objek (contoh: nama, warna, ukuran)</li>
+  <li><strong>Method (Perilaku/Function)</strong>: Tindakan yang dapat dilakukan oleh objek (contoh: berjalan, berbicara, menghitung)</li>
+</ul>
+
+<p>
+OOP dirancang untuk meniru cara manusia memandang dunia nyata. Misalnya, ketika kita melihat mobil, kita mengenali bahwa mobil memiliki atribut (warna, merek, model) dan perilaku (menyalakan mesin, mengerem, berbelok). OOP menerapkan konsep yang sama ke dalam kode program.
 </p>
 
 <p>
-Selain itu, OOP mendukung prinsip <b>reusability</b> atau penggunaan ulang kode. 
-Class yang telah dibuat dapat digunakan kembali dalam proyek lain tanpa perlu 
-menulis ulang logika yang sama. Hal ini sangat penting dalam pengembangan 
-perangkat lunak modern yang menuntut efisiensi waktu dan konsistensi kualitas.
+<strong>Keuntungan Utama OOP:</strong>
 </p>
 
-<p>
-Dalam praktiknya, OOP memiliki empat pilar utama, yaitu 
-<b>Encapsulation</b>, <b>Abstraction</b>, <b>Inheritance</b>, dan <b>Polymorphism</b>. 
-Keempat prinsip ini memungkinkan sistem menjadi lebih fleksibel, aman, dan 
-mudah dikembangkan. Meskipun pada laporan ini lebih difokuskan pada 
-Encapsulation dan Constructor, Dart sebagai bahasa pemrograman 
-mendukung seluruh pilar tersebut secara native.
-</p>
+<ul>
+  <li><b>Modularitas</b>: Program dibagi menjadi bagian-bagian kecil yang independen dan mudah dikelola</li>
+  <li><b>Reusability</b>: Kode dapat digunakan kembali tanpa perlu ditulis ulang dari awal</li>
+  <li><b>Maintainability</b>: Lebih mudah diperbaiki dan diupdate karena strukturnya yang terorganisir</li>
+  <li><b>Scalability</b>: Mudah dikembangkan seiring bertambahnya kebutuhan sistem</li>
+</ul>
 
 <p>
-Dengan menerapkan paradigma OOP, pengembang dapat membangun sistem yang 
-<b>scalable</b> (mudah dikembangkan), <b>maintainable</b> (mudah dirawat), 
-dan <b>robust</b> (tahan terhadap kesalahan). Pendekatan ini menjadi fondasi 
-utama dalam pengembangan aplikasi modern, termasuk framework Flutter 
-yang menggunakan Dart sebagai bahasa utamanya.
+<strong>Empat Pilar Utama OOP:</strong>
+</p>
+
+<ul>
+  <li><b>Encapsulation</b>: Membungkus data dan method dalam satu unit (class) dan membatasi akses langsung ke data</li>
+  <li><b>Abstraction</b>: Menyembunyikan detail kompleks dan hanya menampilkan fitur yang penting</li>
+  <li><b>Inheritance</b>: Kemampuan class untuk mewarisi sifat dan perilaku dari class lain</li>
+  <li><b>Polymorphism</b>: Kemampuan objek untuk mengambil banyak bentuk (bisa merespon method yang sama dengan cara berbeda)</li>
+</ul>
+
+<p>
+Dalam bahasa pemrograman Dart, OOP didukung secara native. Dart memungkinkan kita membuat class, object, constructor, method, dan menerapkan keempat pilar OOP dengan mudah. Konsep ini menjadi fondasi utama dalam pengembangan aplikasi modern, termasuk framework <strong>Flutter</strong> yang menggunakan Dart sebagai bahasa utamanya.
 </p>
 
 </div>
@@ -405,7 +409,7 @@ class Produk {
 <p>OOP membuat program lebih terstruktur dan mudah dikembangkan.</p>
 </div>
 
-<!-- --- FORUM KOMENTAR DIPINDAHKAN KE SINI --- -->
+<!-- --- FORUM KOMENTAR --- -->
 <div class="forum-container">
   <h2>FORUM KOMENTAR</h2>
 
@@ -418,31 +422,20 @@ class Produk {
   <div id="comment-list"></div>
 </div>
 
+<!-- --- DARTPAD BARU DI BAWAH FORUM KOMENTAR --- -->
+<div class="card">
+  <h2>8. DARTPAD TAMBAHAN</h2>
+  <p>Contoh kode tambahan untuk dipelajari lebih lanjut.</p>
+  
+  <div class="run-btn-container">
+    <button class="run-btn" onclick="toggleDartpad('dartpad-6')">JALANKAN KODE</button>
+  </div>
+
+  <iframe id="dartpad-6" class="dartpad-iframe" src="https://dartpad.dev/1945f9c6765fc148931e4419a7d8ec4b"></iframe>
+</div>
+
 </div>
 
 <footer>
 © 2026 - PUTRA DHAFIR NASHRULLAH
-</footer>
-
-<script>
-function addComment(event) {
-  event.preventDefault();
-  const name = document.getElementById("name").value;
-  const comment = document.getElementById("comment").value;
-
-  const commentBox = document.createElement("div");
-  commentBox.className = "comment-box";
-  commentBox.innerHTML = "<strong>" + name + ":</strong><br>" + comment;
-
-  document.getElementById("comment-list").appendChild(commentBox);
-
-  document.getElementById("name").value = "";
-  document.getElementById("comment").value = "";
-}
-
-function toggleDartpad(iframeId) {
-  const iframe = document.getElementById(iframeId);
-  if (iframe.style.display === 'block') {
-    iframe.style.display = 'none';
-  } else {
-    iframe.style.display = '
+</footer
